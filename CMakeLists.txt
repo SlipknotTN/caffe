@@ -69,6 +69,9 @@ if(USE_libstdcpp)
   message("-- Warning: forcing libstdc++ (controlled by USE_libstdcpp option in cmake)")
 endif()
 
+# ---[ memcpy fix
+set(CMAKE_CXX_FLAGS "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
+
 add_definitions(-DGTEST_USE_OWN_TR1_TUPLE)
 
 # ---[ Warnings
